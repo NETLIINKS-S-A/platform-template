@@ -1,0 +1,194 @@
+/*
+* NETLIINKS S.A.
+* Author: Poll Castillo
+* email: alejandrocordovafree@gmail.com
+*
+*
+*/
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -webkit-text-size-adjust: 100%;
+}
+
+html, body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #FAFBFC;
+}
+
+.button {
+  display: inline-block;
+  font-size: 14px;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 3px;
+  border: none;
+  margin-right: 10px;
+  transition: 0.3s all ease;
+  color: #6D6D6D;
+  font-weight: 500;
+  -webkit-appearance: none !important;
+}
+
+.button > svg {
+  margin-right: 6px;
+}
+
+.button__default {
+  background-color: #F4F4F4;
+}
+
+.button__default:hover {
+  background-color: #e7e7e7;
+}
+
+.button__default:active {
+  background-color: #dbdbdb;
+}
+
+.button__primary {
+  color: #FFF;
+  background-color: #54B3A4;
+}
+
+.button__primary:hover {
+  background-color: #49a496;
+}
+
+.button__primary:active {
+  background-color: #419386;
+}
+
+.button__secondary {
+  background-color: #EAECEF;
+}
+
+.button__secondary:hover {
+  background-color: #dcdfe4;
+}
+
+.button__secondary:active {
+  background-color: #cdd2d9;
+}
+
+.button__danger {
+  background-color: #C63A3A;
+  color: #FFF;
+}
+
+.button__danger:hover {
+  background-color: #b33434;
+}
+
+.button__danger:active {
+  background-color: #9f2e2e;
+}
+
+.button__warning {
+  background-color: #DDCD30;
+  color: #FFF;
+}
+
+.button__warning:hover {
+  background-color: #d1c122;
+}
+
+.button__warning:active {
+  background-color: #bbad1f;
+}
+
+.button__large {
+  height: 48px;
+  padding: 0 16px;
+  font-size: 16px;
+}
+
+.button__large > svg {
+  margin-right: 6px;
+}
+
+.button__small {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+
+.button__small > svg {
+  margin-right: 6px;
+}
+
+.button__icon > svg {
+  margin: 0;
+  font-size: 18px;
+}
+
+.button + * {
+  margin-right: 10px;
+}
+
+.button__group .button {
+  display: flow-root;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  float: left;
+}
+
+.container {
+  display: block;
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1010;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 30px 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: 0.2s all ease;
+}
+
+.modal__dialog {
+  position: relative;
+  margin: 0 auto;
+  border-radius: 8px;
+  width: 600px;
+  max-width: 100% !important;
+  background-color: #FFF;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: 0.3s linear;
+  transition-property: opacity, transform;
+}
+
+.modal__body {
+  display: flow-root;
+  padding: 30px 30px;
+}
+
+.modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.open .modal__dialog {
+  opacity: 1;
+  transform: rotateY(0);
+}

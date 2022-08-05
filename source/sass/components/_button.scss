@@ -1,0 +1,126 @@
+.button {
+  display: inline-block;
+  font-size: 14px;
+  height: 38px;
+  padding: 0 14px;
+  border-radius: 3px;
+  border: none;
+  margin-right: 10px;
+  transition: 0.3s all ease;
+
+  color: $content-button-color;
+  font-weight: 500;
+  
+  -webkit-appearance: none !important;
+  
+  & > svg {
+    margin-right: 6px;
+  }
+
+  &__default {
+    $color: $default-button-color;
+    background-color: $color;
+
+    &:hover {
+      background-color: darken($color, 5%);
+    }
+
+    &:active {
+      background-color: darken($color, 10%);
+    }
+  }
+  
+  &__primary {
+    $color: $primary-button-color;
+    color: $white;
+    
+    background-color: $color;
+
+    &:hover {
+      background-color: darken($color, 5%);
+    }
+
+    &:active {
+      background-color: darken($color, 10%);
+    }
+  }
+
+  &__secondary {
+    $color: $secondary-button-color;
+    background-color: $color;
+
+    &:hover {
+      background-color: darken($color, 5%);
+    }
+
+    &:active {
+      background-color: darken($color, 10%);
+    }
+  }
+
+  &__danger {
+    $color: $danger-button-color;
+    background-color: $color;
+    color: $white;
+
+    &:hover {
+      background-color: darken($color, 5%);
+    }
+
+    &:active {
+      background-color: darken($color, 10%);
+    }
+  }
+
+  &__warning {
+    $color: $warning-button-color;
+    background-color: $color;
+    color: $white;
+
+    &:hover {
+      background-color: darken($color, 5%);
+    }
+
+    &:active {
+      background-color: darken($color, 10%);
+    }
+  }
+
+  // SIZES
+  &__large {
+    height: 48px;
+    padding: 0 16px;
+    font-size: 16px;
+
+    & > svg {
+      margin-right: 6px;
+    }
+  }
+
+  &__small {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 12px;
+
+    & > svg {
+      margin-right: 6px;
+    }
+  }
+
+  &__icon > svg {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+.button + * {
+  margin-right: 10px;
+}
+
+.button__group .button {
+  display: flow-root;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  float: left;
+}
