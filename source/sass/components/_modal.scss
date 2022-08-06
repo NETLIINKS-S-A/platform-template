@@ -25,6 +25,12 @@
     transition-property: opacity, transform;
   }
 
+  &__title {
+    font-size: $h5;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
   &__body {
     display: flow-root;
     padding: 30px 30px;

@@ -2,6 +2,8 @@ $white: #FFF;
 $background: #FAFBFC;
 $primary-color: #54B3A4;
 
+$dark-text: #33415E;
+
 $primary-button-color: $primary-color;
 $default-button-color: #F4F4F4;
 $secondary-button-color: #EAECEF;
@@ -9,3 +11,5 @@ $danger-button-color: #C63A3A;
 $warning-button-color: #DDCD30;
 
 $content-button-color: #6D6D6D;
+
+$table-zebra-color: rgba($primary-color, 0.1);

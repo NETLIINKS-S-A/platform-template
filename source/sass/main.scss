@@ -6,8 +6,10 @@
 *
 */
 
-@import './tools/vars/colors';
+@import './tools/vars/vars';
 @import './tools/reset';
 @import './components/button';
 @import './components/container';
+@import './components/date';
 @import './components/modal';
+@import './components/table';

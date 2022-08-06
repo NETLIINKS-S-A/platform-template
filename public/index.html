@@ -12,15 +12,149 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="content">
+    <div class="UI">
+      <div class="aside"></div>
+      <div class="ui__content">
+        <div class="container">
+          <div class="date">
+            <span id="UImonth" class="UImonth"></span>
+            <span id="UIdate" class="UIdate"></span>
+          </div>
+
+          <h3>NETLIINKS S.A.</h3>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>CI</th>
+                <th>Departamento</th>
+                <th>Estado</th>
+                <th>Remitente</th>
+                <th>Asunto</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John Doe</td>
+                <td>0321568495</td>
+                <td>Talento Humano</td>
+                <td><span id="tableStatus">Confirmado</span></td>
+                <td>Jhon Doe</td>
+                <td>Cobro de pagos atrasados</td>
+                <td>25 Jul 2022</td>
+                <td>00:00</td>
+              </tr>
+
+              <tr>
+                <td>John Doe</td>
+                <td>0321568495</td>
+                <td>Talento Humano</td>
+                <td><span id="tableStatus">I</span></td>
+                <td>Jhon Doe</td>
+                <td>Cobro de pagos atrasados</td>
+                <td>25 Jul 2022</td>
+                <td>00:00</td>
+              </tr>
+
+              <tr>
+                <td>John Doe</td>
+                <td>0321568495</td>
+                <td>Talento Humano</td>
+                <td><span id="tableStatus">I</span></td>
+                <td>Jhon Doe</td>
+                <td>Cobro de pagos atrasados</td>
+                <td>25 Jul 2022</td>
+                <td>00:00</td>
+              </tr>
+
+              <tr>
+                <td>John Doe</td>
+                <td>0321568495</td>
+                <td>Talento Humano</td>
+                <td><span id="tableStatus">Confirmado</span></td>
+                <td>Jhon Doe</td>
+                <td>Cobro de pagos atrasados</td>
+                <td>25 Jul 2022</td>
+                <td>00:00</td>
+              </tr>
+
+              <tr>
+                <td>John Doe</td>
+                <td>0321568495</td>
+                <td>Talento Humano</td>
+                <td><span id="tableStatus">A</span></td>
+                <td>Jhon Doe</td>
+                <td>Cobro de pagos atrasados</td>
+                <td>25 Jul 2022</td>
+                <td>00:00</td>
+              </tr>
+
+              <tr>
+                <td>John Doe</td>
+                <td>0321568495</td>
+                <td>Talento Humano</td>
+                <td><span id="tableStatus">Confirmado</span></td>
+                <td>Jhon Doe</td>
+                <td>Cobro de pagos atrasados</td>
+                <td>25 Jul 2022</td>
+                <td>00:00</td>
+              </tr>
+
+              <tr>
+                <td>John Doe</td>
+                <td>0321568495</td>
+                <td>Talento Humano</td>
+                <td><span id="tableStatus">Confirmado</span></td>
+                <td>Jhon Doe</td>
+                <td>Cobro de pagos atrasados</td>
+                <td>25 Jul 2022</td>
+                <td>00:00</td>
+              </tr>
+
+              <tr>
+                <td>John Doe</td>
+                <td>0321568495</td>
+                <td>Talento Humano</td>
+                <td><span id="tableStatus">Confirmado</span></td>
+                <td>Jhon Doe</td>
+                <td>Cobro de pagos atrasados</td>
+                <td>25 Jul 2022</td>
+                <td>00:00</td>
+              </tr>
+
+              <tr>
+                <td>John Doe</td>
+                <td>0321568495</td>
+                <td>Talento Humano</td>
+                <td><span id="tableStatus">Confirmado</span></td>
+                <td>Jhon Doe</td>
+                <td>Cobro de pagos atrasados</td>
+                <td>25 Jul 2022</td>
+                <td>00:00</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h1>Template</h1>
+  </div>
 
   <div class="container">
+    <h2>Modals</h2>
     <button class="button button__default" onclick="openModal('mainModal')">Open modal</button>
     <button class="button button__default" onclick="openModal('secondModal')">Open second modal</button>
   </div>
 
   <div class="modal" id="mainModal">
     <div class="modal__dialog modal__body">
-      <h2 class="modal__title">Lorem Ipsum Modal</h2>
+      <h2 class="modal__title">Título del modal 1</h2>
 
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro magni, quae est fugiat modi assumenda ratione saepe nostrum ab rerum eveniet labore consectetur voluptatibus explicabo id autem, qui repudiandae quidem.</p>
 
@@ -35,7 +169,7 @@
 
   <div class="modal" id="secondModal">
     <div class="modal__dialog modal__body">
-      <h2 class="modal__title">Lorem Ipsum Modal 2</h2>
+      <h2 class="modal__title">Título del modal 2</h2>
 
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro magni, quae est fugiat modi assumenda ratione saepe nostrum ab rerum eveniet labore consectetur voluptatibus explicabo id autem, qui repudiandae quidem.</p>
 
@@ -49,6 +183,7 @@
   </div>
 
   <aside class="sidebar">
+    <h2>Sidebar</h2>
     <div class="sidebar__title">
       <span class="sidebar__title--head">Netguard</span>
       <span class="sidebar__title--username">Jhon Doe</span>
@@ -67,6 +202,8 @@
   </aside>
 
   <div class="container">
+    <h2>Buttons</h2>
+    <h3>Icon buttons</h3>
     <button class="button button__default button__icon button__large"><i class="fa-solid fa-cat-space"></i></button>
     <button class="button button__default button__icon button__large"><i class="fa-solid fa-paw"></i></button>
     <button class="button button__default button__icon button__large"><i class="fa-solid fa-shield-cat"></i></button>  <button class="button button__default button__icon button__large"><i class="fa-solid fa-paw-simple"></i></button>
@@ -75,7 +212,7 @@
   </div>
 
   <div class="container">
-    <p>Large buttons</p>
+    <h3>Large buttons</h3>
     <button class="button button__default button__large"><i class="fa-solid fa-cat-space"></i>Default</button>
     <button class="button button__primary button__large"><i class="fa-solid fa-cat-space"></i>Primary</button>
     <button class="button button__secondary button__large"><i class="fa-solid fa-cat-space"></i>Secondary</button>
@@ -84,7 +221,7 @@
   </div>
 
   <div class="container">
-    <p>Normal buttons</p>
+    <h3>Normal buttons</h3>
     <button class="button button__default"><i class="fa-solid fa-cat-space"></i>Default</button>
     <button class="button button__primary"><i class="fa-solid fa-cat-space"></i>Primary</button>
     <button class="button button__secondary"><i class="fa-solid fa-cat-space"></i>Secondary</button>
@@ -93,7 +230,7 @@
   </div>
 
   <div class="container">
-    <p>Large buttons</p>
+    <h3>Small buttons</h3>
     <button class="button button__default button__small"><i class="fa-solid fa-cat-space"></i>Default</button>
     <button class="button button__primary button__small"><i class="fa-solid fa-cat-space"></i>Primary</button>
     <button class="button button__secondary button__small"><i class="fa-solid fa-cat-space"></i>Secondary</button>
@@ -102,7 +239,7 @@
   </div>
 
   <div class="container">
-    <p>Button Group</p>
+    <h3>Button Group</h3>
     <div class="button__group">
       <button class="button button__default">Default</button>
       <button class="button button__primary">Primary</button>
@@ -112,7 +249,10 @@
     </div>
   </div>
 
+  <div class="container">
+    <h2>Tables</h2>
+  </div>
+
   <script src="ui.js"></script>
-  <script src="./fontawesome-pro-6.1.0-web/js/all.js"></script>
 </body>
 </html>
