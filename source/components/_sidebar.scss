@@ -1,36 +1,115 @@
 .sidebar {
-  background-color: #F1F1F1;
-  padding: 10px 25px;
+  background-color: #f1f1f1;
+  padding: 20px 25px;
   height: 100vh;
 
+  // Change styles of sidebar header
   .header {
     margin-bottom: 16px;
-
+    // NETLIINKS Platform name
     h6 {
+      line-height: 10px;
       text-transform: uppercase;
       font-weight: bolder;
     }
-  }
-
-  .menu, .accordion__content {
-    list-style: none;
-    li {
-      margin-bottom: 16px;
-    }
-
-    a {
-      text-decoration: none;
+    // Username
+    span {
+      font-size: 12px;
+      text-transform: Capitalized;
       color: $lead-text;
     }
   }
 
+  .menu, ul {
+    display: inline-block;
+    list-style: none;
+
+    .menu__item {
+      color: $lead-text;
+      text-decoration: none;
+      cursor: pointer;
+      margin-bottom: 10px;
+
+      &:hover {
+        color: darken($lead-text, 10%)
+      }
+    }
+  }
+
+  .accordion__toggle {
+    background: none;
+    border-radius: none;
+    border: none;
+    -webkit-appearance: none;
+  }
   
   .accordion__content {
     display: none;
-    margin: 8px 0 0 16px;
+    opacity: 0;
+    list-style: none;
+    margin-left: 16px;
+    margin-top: 8px;
+    transition: 0.3s all ease;
+  
+    li {
+      margin-bottom: 8px;
+      color: $lead-text;
+      
+      &:hover {
+        color: darken($lead-text, 10%);
+      }
+    }
+  
+    a {
+      text-decoration: none;
+      color: inherit;
+
+    }
   }
 
-  .menu .open {
+  .accordion__isOpen {
     display: block;
+    opacity: 1;
+    color: $dark-text;
+  }
+
+  .accordion__isActive {
+    transition: 0.3s all ease;
+    color: $dark-text;
   }
 }
+
+// .sidebar {
+//   background-color: #F1F1F1;
+//   padding: 10px 25px;
+//   height: 100vh;
+
+//   .header {
+//     margin-bottom: 16px;
+
+//     h6 {
+//       text-transform: uppercase;
+//       font-weight: bolder;
+//     }
+//   }
+
+//   .menu, .accordion__content {
+//     list-style: none;
+//     li {
+//       margin-bottom: 16px;
+
+//       text-decoration: none;
+//       color: $lead-text;
+//     }
+//   }
+
+  
+//   .accordion__content {
+//     display: none;
+//     margin: 8px 0 0 16px;
+//   }
+
+//   .menu .open {
+//     display: block;
+//   }
+// }
