@@ -201,6 +201,7 @@ dropdowns.forEach((dropdown) => {
 // Get all menu dropdowns from the document
 const accordions = document.querySelectorAll('.accordion');
 const accordionContent = document.querySelectorAll('.accordion__content')
+
 // Loop through all accordion elements
 accordions.forEach((btn) => {
 
@@ -219,6 +220,7 @@ accordions.forEach((btn) => {
     });
 
     const panel = btn.nextElementSibling;
-    console.log(panel);
+    
+    console.log(panel)
   });
 });
