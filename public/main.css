@@ -388,20 +388,20 @@ p {
   font-weight: bolder;
 }
 
-.sidebar .menu, .sidebar .submenu {
+.sidebar .menu, .sidebar .accordion__content {
   list-style: none;
 }
 
-.sidebar .menu li, .sidebar .submenu li {
+.sidebar .menu li, .sidebar .accordion__content li {
   margin-bottom: 16px;
 }
 
-.sidebar .menu a, .sidebar .submenu a {
+.sidebar .menu a, .sidebar .accordion__content a {
   text-decoration: none;
   color: #778398;
 }
 
-.sidebar .submenu {
+.sidebar .accordion__content {
   display: none;
   margin: 8px 0 0 16px;
 }

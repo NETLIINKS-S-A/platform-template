@@ -195,3 +195,30 @@ dropdowns.forEach((dropdown) => {
   });
 });
 
+/* --------------------------------------
+ MENU DROPDOWNS
+----------------------------------------- */
+// Get all menu dropdowns from the document
+const accordions = document.querySelectorAll('.accordion');
+const accordionContent = document.querySelectorAll('.accordion__content')
+// Loop through all accordion elements
+accordions.forEach((btn) => {
+
+  /*
+    We are using this method in order to have
+    multiple accordions elements on the page work
+  */
+  btn.addEventListener('click', (e) => {
+    accordionContent.forEach((acc) => {
+      if (
+        e.target.nextElementSibling !== acc &&
+        acc.classList.contains('open')
+      ) {
+        acc.classList.remove('open');
+      }
+    });
+
+    const panel = btn.nextElementSibling;
+    console.log(panel);
+  });
+});
