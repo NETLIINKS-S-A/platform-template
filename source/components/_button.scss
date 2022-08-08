@@ -13,23 +13,21 @@
   
   -webkit-appearance: none !important;
   
+  $color: $default-button-color;
+  background-color: $color;
+
+  &:hover {
+    background-color: darken($color, 5%);
+  }
+
+  &:active {
+    background-color: darken($color, 10%);
+  }
+
   & > i {
     margin-right: 6px;
   }
 
-  &__default {
-    $color: $default-button-color;
-    background-color: $color;
-
-    &:hover {
-      background-color: darken($color, 5%);
-    }
-
-    &:active {
-      background-color: darken($color, 10%);
-    }
-  }
-  
   &__primary {
     $color: $primary-button-color;
     color: $white;

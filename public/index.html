@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NETLIINKS UIKIT</title>
-  <link rel="stylesheet" href="./sass/main.css">
+  <link rel="stylesheet" href="./main.css">
   <link rel="stylesheet" href="./fontawesome/css/all.css" type="text/css">
   <link rel="preconnect" href="https://fonts.googleapis.com"> 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
@@ -14,16 +14,132 @@
 <body>
   <div class="content">
     <div class="UI">
-      <div class="aside"></div>
+      <div class="sidebar"> <!-- MENUBAR -->
+        <div class="header">
+          <h6>Netguard</h6>
+          <span>Poll Castillo</span>
+        </div>
+
+        <ul class="menu">
+          <li><a href="#">
+            <i class="fa-solid fa-gauge"></i>
+            <span class="text">Dashboard</span>
+          </a></li>
+
+          <li><a href="#">
+            <i class="fa-solid fa-building"></i>
+            <span class="text">Empresas</span>
+          </a></li>
+
+          <li id="nav-dropdown"><a href="#">
+            <i class="fa-solid fa-user-group"></i>
+            <span class="text">Usuarios</span>
+
+            <ul class="submenu">
+              <li><a href="#">
+                <i class="fa-solid fa-person-military-pointing"></i>
+                <span class="text">Guardias</span>
+              </a></li>
+
+              <li><a href="#">
+                <i class="fa-solid fa-user"></i>
+                <span class="text">Clientes</span>
+              </a></li>
+
+              <li><a href="#">
+                <i class="fa-solid fa-siren"></i>
+                <span class="text">Emergencia</span>
+              </a></li>
+            </ul>
+          </a></li>
+
+          <li id="nav-dropdown"><a href="#">
+            <i class="fa-solid fa-book"></i>
+            <span class="text">Bitácora</span>
+
+            <ul class="submenu">
+              <li><a href="#">
+                <i class="fa-solid fa-calendar-exclamation"></i>
+                <span class="text">Eventos</span>
+              </a></li>
+
+              <li><a href="#">
+                <i class="fa-solid fa-browsers"></i>
+                <span class="text">Plataformas</span>
+              </a></li>
+
+              <li><a href="#">
+                <i class="fa-solid fa-user"></i>
+                <span class="text">Visitas</span>
+              </a></li>
+
+              <li><a href="#">
+                <i class="fa-solid fa-note"></i>
+                <span class="text">Notas</span>
+              </a></li>
+            </ul>
+          </a></li>
+
+          <li><a href="#">
+            <i class="fa-solid fa-apartment"></i>
+            <span class="text">Ciudadela</span>
+          </a></li>
+
+          <li id="nav-dropdown"><a href="#">
+            <i class="fa-solid fa-up-from-bracket"></i>
+            <span class="text">importar</span>
+
+            <ul class="submenu">
+              <li><a href="#">
+                <i class="fa-solid fa-person-military-pointing"></i>
+                <span class="text">Guardias</span>
+              </a></li>
+
+              <li><a href="#">
+                <i class="fa-solid fa-user"></i>
+                <span class="text">Clientes</span>
+              </a></li>
+            </ul>
+          </a></li>
+
+          <li><a href="#">
+            <i class="fa-solid fa-hammer"></i>
+            <span class="text">Superusuarios</span>
+          </a></li>
+        </ul>
+
+      </div>
+
       <div class="ui__content">
         <div class="container">
-          <div class="date">
-            <span id="UImonth" class="UImonth"></span>
-            <span id="UIdate" class="UIdate"></span>
+          <div class="hw">
+            <div class="date">
+              <span id="UImonth" class="UImonth"></span>
+              <span id="UIdate" class="UIdate"></span>
+            </div>
+
+            <!-- tools -->
+            <div class="tools">
+              <div class="dropdown">
+                <div class="select">
+                  <span class="selected">Empresa Demo 4</span>
+                  <div class="caret"></div>
+                </div>
+                <ul class="menu">
+                  <li>Empresa Demo 1</li>
+                  <li>Empresa Demo 2</li>
+                  <li>Empresa Demo 3</li>
+                  <li class="active">Empresa Demo 4</li>
+                  <li>Empresa Demo 5</li>
+                </ul>
+              </div>
+              <button class="button" onclick="openModal('demoModal')">
+                <span class="fa-solid fa-cat"></span>
+              </button>
+            </div>
           </div>
 
           <h3>NETLIINKS S.A.</h3>
-
           <table class="table">
             <thead>
               <tr>
@@ -142,14 +258,32 @@
       </div>
     </div>
   </div>
+
+  <!-- END UI -->
+  <div class="modal" id="demoModal">
+    <div class="modal__dialog modal__body">
+      <h2 class="modal__title">Modal</h2>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro magni, quae est fugiat modi assumenda ratione saepe nostrum ab rerum eveniet labore consectetur voluptatibus explicabo id autem, qui repudiandae quidem.</p>
+
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus voluptas facilis minus dicta quibusdam quod tempore aperiam dolor nobis quis omnis officia excepturi obcaecati, rem animi sed eligendi suscipit sapiente.</p>
+
+      <div class="modal__footer">
+        <button class="button button__primary" onclick="closeModal('demoModal')">Aceptar</button>
+        <button class="button" onclick="closeModal('demoModal')">cancelar</button>
+      </div>
+    </div>
+  </div>
+
+
   <div class="container">
     <h1>Template</h1>
   </div>
 
   <div class="container">
     <h2>Modals</h2>
-    <button class="button button__default" onclick="openModal('mainModal')">Open modal</button>
-    <button class="button button__default" onclick="openModal('secondModal')">Open second modal</button>
+    <button class="button" onclick="openModal('mainModal')">Open modal</button>
+    <button class="button" onclick="openModal('secondModal')">Open second modal</button>
   </div>
 
   <div class="modal" id="mainModal">
@@ -162,7 +296,7 @@
 
       <div class="modal__footer">
         <button class="button button__primary">Aceptar</button>
-        <button class="button button__default" onclick="closeModal('mainModal')">cancelar</button>
+        <button class="button" onclick="closeModal('mainModal')">cancelar</button>
       </div>
     </div>
   </div>
@@ -177,43 +311,24 @@
 
       <div class="modal__footer">
         <button class="button button__primary">Aceptar</button>
-        <button class="button button__default" onclick="closeModal('secondModal')">cancelar</button>
+        <button class="button" onclick="closeModal('secondModal')">cancelar</button>
       </div>
     </div>
   </div>
 
-  <aside class="sidebar">
-    <h2>Sidebar</h2>
-    <div class="sidebar__title">
-      <span class="sidebar__title--head">Netguard</span>
-      <span class="sidebar__title--username">Jhon Doe</span>
-    </div>
-    
-    <div class="sidebar__spacing"></div>
-    
-    <ul class="sidebar__list">
-      <li class="sidebar__list--item">
-        <a href="#">
-          <span class="sidebar__icon"></span>
-        </a>
-      </li>
-    </ul>
-    
-  </aside>
-
   <div class="container">
     <h2>Buttons</h2>
     <h3>Icon buttons</h3>
-    <button class="button button__default button__icon button__large"><i class="fa-solid fa-cat-space"></i></button>
-    <button class="button button__default button__icon button__large"><i class="fa-solid fa-paw"></i></button>
-    <button class="button button__default button__icon button__large"><i class="fa-solid fa-shield-cat"></i></button>  <button class="button button__default button__icon button__large"><i class="fa-solid fa-paw-simple"></i></button>
-    <button class="button button__default button__icon button__large"><i class="fa-solid fa-dog"></i></button>
-    <button class="button button__default button__icon button__large"><i class="fa-solid fa-shield-dog"></i></button>
+    <button class="button button__icon button__large"><i class="fa-solid fa-cat-space"></i></button>
+    <button class="button button__icon button__large"><i class="fa-solid fa-paw"></i></button>
+    <button class="button button__icon button__large"><i class="fa-solid fa-shield-cat"></i></button>  <button class="button button__icon button__large"><i class="fa-solid fa-paw-simple"></i></button>
+    <button class="button button__icon button__large"><i class="fa-solid fa-dog"></i></button>
+    <button class="button button__icon button__large"><i class="fa-solid fa-shield-dog"></i></button>
   </div>
 
   <div class="container">
     <h3>Large buttons</h3>
-    <button class="button button__default button__large"><i class="fa-solid fa-cat-space"></i>Default</button>
+    <button class="button button__large"><i class="fa-solid fa-cat-space"></i>Default</button>
     <button class="button button__primary button__large"><i class="fa-solid fa-cat-space"></i>Primary</button>
     <button class="button button__secondary button__large"><i class="fa-solid fa-cat-space"></i>Secondary</button>
     <button class="button button__warning button__large"><i class="fa-solid fa-cat-space"></i>warning</button>
@@ -222,7 +337,7 @@
 
   <div class="container">
     <h3>Normal buttons</h3>
-    <button class="button button__default"><i class="fa-solid fa-cat-space"></i>Default</button>
+    <button class="button"><i class="fa-solid fa-cat-space"></i>Default</button>
     <button class="button button__primary"><i class="fa-solid fa-cat-space"></i>Primary</button>
     <button class="button button__secondary"><i class="fa-solid fa-cat-space"></i>Secondary</button>
     <button class="button button__warning"><i class="fa-solid fa-cat-space"></i>warning</button>
@@ -231,7 +346,7 @@
 
   <div class="container">
     <h3>Small buttons</h3>
-    <button class="button button__default button__small"><i class="fa-solid fa-cat-space"></i>Default</button>
+    <button class="button button__small"><i class="fa-solid fa-cat-space"></i>Default</button>
     <button class="button button__primary button__small"><i class="fa-solid fa-cat-space"></i>Primary</button>
     <button class="button button__secondary button__small"><i class="fa-solid fa-cat-space"></i>Secondary</button>
     <button class="button button__warning button__small"><i class="fa-solid fa-cat-space"></i>warning</button>
@@ -241,7 +356,7 @@
   <div class="container">
     <h3>Button Group</h3>
     <div class="button__group">
-      <button class="button button__default">Default</button>
+      <button class="button">Default</button>
       <button class="button button__primary">Primary</button>
       <button class="button button__secondary">Secondary</button>
       <button class="button button__danger">Danger</button>
@@ -250,7 +365,33 @@
   </div>
 
   <div class="container">
-    <h2>Tables</h2>
+    <h2>Dropdowns</h2>
+    <div class="dropdown">
+      <div class="select">
+        <span class="selected">Figma</span>
+        <div class="caret"></div>
+      </div>
+      <ul class="menu">
+        <li>Framer</li>
+        <li>Sketch</li>
+        <li>Invision Studio</li>
+        <li class="active">Figma</li>
+        <li>Adobe XD</li>
+      </ul>
+    </div>
+
+    <div class="dropdown">
+      <div class="select">
+        <span class="selected">Facebook</span>
+        <div class="caret"></div>
+      </div>
+      <ul class="menu">
+        <li class="active">Facebook</li>
+        <li>Twitter</li>
+        <li>TikTok</li>
+        <li>linkedin</li>
+      </ul>
+    </div>
   </div>
 
   <script src="ui.js"></script>

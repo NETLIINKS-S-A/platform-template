@@ -1,0 +1,103 @@
+.dropdown {
+  display: inline-block;
+  min-width: 10rem;
+  position: relative;
+  margin: 0.5em;
+  font-size: $base;
+
+  .select {
+    $color: $default-button-color;
+    background-color: $color;
+    color: $dark-text;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 3px;
+    padding: 0.8em;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    transition-property: background;
+
+    /*
+      Clicked styles
+      (added later in JavaScirpt
+    */
+    &--isClicked {
+      box-shadow: 0 0.1em 0.2em rgba(black, 0.1);
+    }
+
+    &:hover {
+      background: &lead-text;
+    }
+
+  }
+
+  .caret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid $lead-text;
+    transition: 0.3s;
+  }
+
+  /*
+    Rotte styles
+    (added later in JavaScirpt)
+  */
+  .caret--isRotate {
+    transform: rotate(-90deg);
+  }
+
+  .menu {
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: $white;
+    box-shadow: 0 0.5em 1em rgba(black, 0.2);
+    border-radius: 3px;
+    color: $lead-text;
+    position: absolute;
+    top: 3.4em;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    transition: 0.2s;
+    z-index: 1;
+
+    li {
+      font-size: 14px;
+      padding: 0.7em 0.5em;
+      margin: 0.3em 0;
+      border-radius: 3px;
+      cursor: pointer;
+
+      &:hover {
+        background: lighten($primary-color, 30%);
+      }
+    }
+  }
+
+  /*
+    Active Styles
+    (added later in JavaScirpt)
+  */
+  .active {
+    background: lighten($primary-color, 5%);
+    color: $white;
+    &:hover {
+      background: lighten($primary-color, 30%);
+      color: $lead-text;
+    }
+  }
+
+  /*
+    Open Styles
+    (added later in JavaScirpt)
+  */
+  .menu--isOpen {
+    display: block;
+    opacity: 1;
+  }
+}

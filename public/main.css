@@ -28,6 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 56px;
+  font-weight: 900;
 }
 
 h2 {
@@ -68,12 +69,18 @@ p {
 
 .UI {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 220px 1fr;
 }
 
-.aside {
-  background-color: #F1F1F1;
-  height: 100vh;
+.hw {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.tool + * {
+  outline: 1px solid blue;
 }
 
 .button {
@@ -88,22 +95,19 @@ p {
   color: #6D6D6D;
   font-weight: 500;
   -webkit-appearance: none !important;
+  background-color: #F4F4F4;
+}
+
+.button:hover {
+  background-color: #e7e7e7;
+}
+
+.button:active {
+  background-color: #dbdbdb;
 }
 
 .button > i {
   margin-right: 6px;
-}
-
-.button__default {
-  background-color: #F4F4F4;
-}
-
-.button__default:hover {
-  background-color: #e7e7e7;
-}
-
-.button__default:active {
-  background-color: #dbdbdb;
 }
 
 .button__primary {
@@ -215,6 +219,109 @@ p {
   font-weight: bolder;
 }
 
+.dropdown {
+  display: inline-block;
+  min-width: 10rem;
+  position: relative;
+  margin: 0.5em;
+  font-size: 14px;
+  /*
+    Rotte styles
+    (added later in JavaScirpt)
+  */
+  /*
+    Active Styles
+    (added later in JavaScirpt)
+  */
+  /*
+    Open Styles
+    (added later in JavaScirpt)
+  */
+}
+
+.dropdown .select {
+  background-color: #F4F4F4;
+  color: #33415E;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 3px;
+  padding: 0.8em;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  transition-property: background;
+  /*
+      Clicked styles
+      (added later in JavaScirpt
+    */
+}
+
+.dropdown .select--isClicked {
+  box-shadow: 0 0.1em 0.2em rgba(0, 0, 0, 0.1);
+}
+
+.dropdown .select:hover {
+  background: .dropdown .select:hover lead-text;
+}
+
+.dropdown .caret {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #778398;
+  transition: 0.3s;
+}
+
+.dropdown .caret--isRotate {
+  transform: rotate(-90deg);
+}
+
+.dropdown .menu {
+  list-style: none;
+  padding: 0.2em 0.5em;
+  background: #FFF;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  color: #778398;
+  position: absolute;
+  top: 3.4em;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  opacity: 0;
+  display: none;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+.dropdown .menu li {
+  font-size: 14px;
+  padding: 0.7em 0.5em;
+  margin: 0.3em 0;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.dropdown .menu li:hover {
+  background: #bee2dc;
+}
+
+.dropdown .active {
+  background: #66bbad;
+  color: #FFF;
+}
+
+.dropdown .active:hover {
+  background: #bee2dc;
+  color: #778398;
+}
+
+.dropdown .menu--isOpen {
+  display: block;
+  opacity: 1;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -266,6 +373,43 @@ p {
   transform: rotateY(0);
 }
 
+.sidebar {
+  background-color: #F1F1F1;
+  padding: 10px 25px;
+  height: 100vh;
+}
+
+.sidebar .header {
+  margin-bottom: 16px;
+}
+
+.sidebar .header h6 {
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+.sidebar .menu, .sidebar .submenu {
+  list-style: none;
+}
+
+.sidebar .menu li, .sidebar .submenu li {
+  margin-bottom: 16px;
+}
+
+.sidebar .menu a, .sidebar .submenu a {
+  text-decoration: none;
+  color: #778398;
+}
+
+.sidebar .submenu {
+  display: none;
+  margin: 8px 0 0 16px;
+}
+
+.sidebar .menu .open {
+  display: block;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -294,6 +438,7 @@ p {
 
 .table tbody td {
   font-size: 14px;
+  color: #33415E;
   padding: 5px 10px;
 }
 

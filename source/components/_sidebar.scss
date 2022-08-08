@@ -1,0 +1,36 @@
+.sidebar {
+  background-color: #F1F1F1;
+  padding: 10px 25px;
+  height: 100vh;
+
+  .header {
+    margin-bottom: 16px;
+
+    h6 {
+      text-transform: uppercase;
+      font-weight: bolder;
+    }
+  }
+
+  .menu, .submenu {
+    list-style: none;
+    li {
+      margin-bottom: 16px;
+    }
+
+    a {
+      text-decoration: none;
+      color: $lead-text;
+    }
+  }
+
+  
+  .submenu {
+    display: none;
+    margin: 8px 0 0 16px;
+  }
+
+  .menu .open {
+    display: block;
+  }
+}
