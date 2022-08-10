@@ -1,12 +1,9 @@
-const url = 'https://backend.netliinks.com:443/';
 const $login = document.getElementById('login');
 const loginButton = document.getElementById('loginButton');
 const username = document.getElementById('email');
 const password = document.getElementById('password');
-
+const interactions = document.getElementById('interactions');
 const $document = document.getElementById('pageContent');
-
-let key;
 
 /*
 If login correctly enter this data
