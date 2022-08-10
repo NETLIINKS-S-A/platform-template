@@ -425,7 +425,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-top: 12px;
+  margin-top: 24px;
 }
 
 .open .modal__dialog {

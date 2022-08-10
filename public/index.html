@@ -15,10 +15,24 @@
   <div id="interactions"></div>
 
   <div class="content" id="pageContent">
-    <div class="ui" id="pageUI"></div>
+    <div class="UI" id="pageUI">
+      <div class="sidebar" id="sidebar"></div>
+      <div class="ui__content" id="content"></div>
+    </div>
   </div>
 
   <div class="login login--isVisible" id="login">
+    <div class="modal" id="loginErrorModal">
+      <div class="modal__dialog modal__body">
+        <h2 class="modal__title">Error al iniciar sesión</h2>
+        <p>Por favor, revise que ha ingresado correctamente sus credenciales.</p>
+  
+        <div class="modal__footer">
+          <button class="button button__primary" onclick="closeModal('loginErrorModal')">Aceptar</button>
+        </div>
+      </div>
+    </div>
+
     <div class="login__content">
       <div class="login__window">
         <div class="login__header"></div>
