@@ -252,7 +252,6 @@ p {
   padding: 0.8em;
   cursor: pointer;
   transition: 0.3s all ease;
-  transition-property: background;
   /*
       Clicked styles
       (added later in JavaScirpt
@@ -264,7 +263,7 @@ p {
 }
 
 .dropdown .select:hover {
-  background: .dropdown .select:hover lead-text;
+  background: #778398;
 }
 
 .dropdown .caret {
@@ -323,6 +322,56 @@ p {
 .dropdown .menu--isOpen {
   display: block;
   opacity: 1;
+}
+
+.form {
+  display: block;
+}
+
+.form__label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.42px;
+  margin-bottom: 8px;
+  color: #778398;
+  text-transform: uppercase;
+}
+
+.form__group {
+  display: block;
+  margin-bottom: 22px;
+}
+
+.input__text,
+.input__password,
+.input__email {
+  display: inline-block;
+  border: 1px solid #54B3A4;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+}
+
+.login {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  background-color: #33415E;
+}
+
+.login__content {
+  display: block;
+}
+
+.login__window {
+  padding: 44px;
+  border-radius: 18px;
+  background-color: #FFF;
+  min-width: 484px;
 }
 
 .modal {

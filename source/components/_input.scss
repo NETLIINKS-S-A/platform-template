@@ -1,0 +1,11 @@
+.input__text,
+.input__password,
+.input__email {
+  display: inline-block;
+  border: 1px solid $primary-color;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 4px;
+  width: 100%;
+  outline: none;
+}

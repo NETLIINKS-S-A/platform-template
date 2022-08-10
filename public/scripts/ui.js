@@ -17,8 +17,6 @@ function closeModal(m) {
   }, 250)
 }
 
-console.clear();
-
 /* --------------------------------------
   DATE AND TIME
  -------------------------------------- */
@@ -28,97 +26,99 @@ console.clear();
 */
 const UImonth = document.getElementById('UImonth');
 const UIdate = document.getElementById('UIdate');
-// Creating date object
-const $D = new Date();
-// Get the current day
-let day = $D.getDay();
-// Get the current month
-let month = $D.getMonth();
-// Get the current date
-let date = $D.getDate();
-// Change month name depending of the number
-switch (month) {
-  case 0:
-    month = 'Enero'
-  break;
+if (UImonth) {
+  // Creating date object
+  const $D = new Date();
+  // Get the current day
+  let day = $D.getDay();
+  // Get the current month
+  let month = $D.getMonth();
+  // Get the current date
+  let date = $D.getDate();
+  // Change month name depending of the number
+  switch (month) {
+    case 0:
+      month = 'Enero'
+    break;
 
-  case 1:
-    month = 'Febrero'
-  break;
+    case 1:
+      month = 'Febrero'
+    break;
 
-  case 2:
-    month = 'Marzo'
-  break;
+    case 2:
+      month = 'Marzo'
+    break;
 
-  case 3:
-    month = 'Abril'
-  break;
+    case 3:
+      month = 'Abril'
+    break;
 
-  case 4:
-    month = 'Mayo'
-  break;
+    case 4:
+      month = 'Mayo'
+    break;
 
-  case 5:
-    month = 'Junio'
-  break;
+    case 5:
+      month = 'Junio'
+    break;
 
-  case 6:
-    month = 'Julio'
-  break;
+    case 6:
+      month = 'Julio'
+    break;
 
-  case 7:
-    month = 'Agosto'
-  break;
+    case 7:
+      month = 'Agosto'
+    break;
 
-  case 8:
-    month = 'Septiembre'
-  break;
+    case 8:
+      month = 'Septiembre'
+    break;
 
-  case 9:
-    month = 'Octubre'
-  break;
+    case 9:
+      month = 'Octubre'
+    break;
 
-  case 10:
-    month = 'Noviembre'
-  break;
+    case 10:
+      month = 'Noviembre'
+    break;
 
-  case 11:
-    month = 'Diciembre'
-  break;
+    case 11:
+      month = 'Diciembre'
+    break;
+  }
+  // Change day name depending of the number
+  switch (day) {
+    case 0:
+      day = 'Domingo';
+    break;
+
+    case 1:
+      day = 'Lunes';
+    break;
+
+    case 2:
+      day = 'Martes';
+    break;
+
+    case 3:
+      day = 'Miércoles';
+    break;
+
+    case 4:
+      day = 'Jueves';
+    break;
+
+    case 5:
+      day = 'Viernes';
+    break;
+
+    case 6:
+      day = 'Sábado';
+    break;
+  }
+  // Write the current date into HTML
+  UImonth.innerHTML = month;
+  UIdate.innerHTML = `${day} ${date}`;
 }
-// Change day name depending of the number
-switch (day) {
-  case 0:
-    day = 'Domingo';
-  break;
-
-  case 1:
-    day = 'Lunes';
-  break;
-
-  case 2:
-    day = 'Martes';
-  break;
-
-  case 3:
-    day = 'Miércoles';
-  break;
-
-  case 4:
-    day = 'Jueves';
-  break;
-
-  case 5:
-    day = 'Viernes';
-  break;
-
-  case 6:
-    day = 'Sábado';
-  break;
-}
-// Write the current date into HTML
-UImonth.innerHTML = month;
-UIdate.innerHTML = `${day} ${date}`;
 
 /* --------------------------------------
   TABLE STATUS
