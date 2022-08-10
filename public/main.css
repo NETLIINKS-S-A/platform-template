@@ -63,8 +63,12 @@ p {
 }
 
 .content {
-  display: block;
+  display: none;
   height: 100vh;
+}
+
+.content--isVisible {
+  display: block;
 }
 
 .UI {
@@ -355,12 +359,16 @@ p {
 }
 
 .login {
-  display: flex;
+  display: none;
   height: 100vh;
   width: 100vw;
   align-items: center;
   justify-content: center;
   background-color: #33415E;
+}
+
+.login--isVisible {
+  display: flex;
 }
 
 .login__content {

@@ -56,8 +56,13 @@ p {
 }
 
 .content {
-  display: block;
+  display: none;
   height: 100vh;
+
+  &--isVisible {
+    display: block;
+  }
+
 }
 
 .UI {
