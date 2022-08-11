@@ -19,7 +19,7 @@ async function login(acc_token) {
     .then((datas) => {
       renderSidebar();
       // open as default
-      loadbusiness(acc_token)
+      renderBusiness(acc_token)
     })
 }
 

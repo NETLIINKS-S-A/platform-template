@@ -202,14 +202,79 @@ dropdowns.forEach((dropdown) => {
 /* --------------------------------------
  MENU DROPDOWNS
 ----------------------------------------- */
-// Get all menu dropdowns from the document
-const accordions = document.querySelectorAll('.accordion');
+function accordion() {
+  // Get all menu dropdowns from the document
+  const accordions = document.querySelectorAll('.accordion');
 
-accordions.forEach((accordion) => {
+  accordions.forEach((accordion) => { 
+    accordion.addEventListener('click', ()=> {
+      const accordionContent = accordion.nextElementSibling;
+      accordionContent.classList.toggle('accordion__isOpen');
+      accordion.classList.toggle('accordion__isActive');
+    })
+  });
+}
+
+function tableTime() {
+  const tableTime = document.querySelectorAll('#tableTime');
   
-  accordion.addEventListener('click', ()=> {
-    const accordionContent = accordion.nextElementSibling;
-    accordionContent.classList.toggle('accordion__isOpen');
-    accordion.classList.toggle('accordion__isActive');
-  })
-});
+  tableTime.forEach((time) => {
+    console.log(time);
+  });
+}
+
+
+
+
+
+
+
+function reDate(obj) {
+  let time = obj.lastModifiedDate;
+  let day = time.slice(8, 10);
+  let month = time.slice(5, 7);
+  let year = time.slice(0, 4);
+  
+  if (month === '01') {
+    month = 'Enero';
+  } else if (month === '02') {
+    month = 'Febrero';
+  } else if (month === '03') {
+    month = 'Marzo';
+  } else if (month === '04') {
+    month = 'Abril';
+  } else if (month === '05') {
+    month = 'Mayo';
+  } else if (month === '06') {
+    month = 'Junio';
+  } else if (month === '07') {
+    month = 'Julio';
+  } else if (month === '08') {
+    month = 'Agosto';
+  } else if (month === '09') {
+    month = 'Septiembre';
+  } else if (month === '10') {
+    month = 'Octubre';
+  } else if (month === '11') {
+    month = 'Noviembre';
+  } else if (month === '12') {
+    month = 'Diciembre';
+  } else {
+    console.log('Ha ocurrido un error al obtener el mes');
+  }
+
+  let date = day + ' ' + month + ' ' + year;
+
+  return date;
+}
+
+function reTime(obj) {
+  let time = obj.lastModifiedDate;
+  let hours = time.slice(11, 14);
+  let minutes = time.slice(14, 16);
+  let seconds = time.slice(16, 19);
+
+  let date = hours + minutes + seconds;
+
+  return date;
+}

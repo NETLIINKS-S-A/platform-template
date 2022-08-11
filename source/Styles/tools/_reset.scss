@@ -59,6 +59,7 @@ p {
 .content {
   display: none;
   height: 100vh;
+  overflow-y: scroll;
 
   &--isVisible {
     display: block;
@@ -69,6 +70,12 @@ p {
 .UI {
   display: grid;
   grid-template-columns: 220px 1fr;
+  overflow: hidden;
+  height: 100vh;
+
+  .container {
+    overflow: scroll;
+  }
 }
 
 .hw {
@@ -82,7 +89,21 @@ p {
   outline: 1px solid blue;
 }
 
-
 .section__header {
   height: 80px;
+}
+
+.ui__content {
+  display: block;
+  height: 100%;
+  overflow: scroll;
+}
+
+.page-header {
+  background-color: rgba($background, 0.8);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top:0;
+  z-index: 100;
+  padding-top: 32px;
 }
