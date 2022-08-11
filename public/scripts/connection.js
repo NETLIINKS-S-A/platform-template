@@ -54,7 +54,7 @@ async function getToken(user, password) {
 
 loginButton.addEventListener('click', (e)=> {
   e.preventDefault();
-  getToken(username.value, password.value);
+  getToken($d.email.value, $d.password.value);
 });
 
 

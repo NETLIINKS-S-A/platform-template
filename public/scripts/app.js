@@ -120,47 +120,51 @@ async function renderSidebar() {
 async function renderBusiness(token) {
   let title = 'Empresas';
   let content = `
-    <div class="hw">
-      <div class="date">
-        <span id="UImonth" class="UImonth"></span>
-        <span id="UIdate" class="UIdate"></span>
-      </div>
-
-      <!-- tools -->
-      <div class="tools">
-        <div class="dropdown">
-          <div class="select">
-            <span class="selected">Empresa Demo 4</span>
-            <div class="caret"></div>
-          </div>
-          <ul class="menu">
-            <li>Empresa Demo 1</li>
-            <li>Empresa Demo 2</li>
-            <li>Empresa Demo 3</li>
-            <li class="active">Empresa Demo 4</li>
-            <li>Empresa Demo 5</li>
-          </ul>
+    <header class="page-header">
+      <div class="hw">
+        <div class="date">
+          <span id="UImonth" class="UImonth"></span>
+          <span id="UIdate" class="UIdate"></span>
         </div>
-        <button class="button" onclick="openModal('demoModal')">
-          <span class="fa-solid fa-cat"></span>
-        </button>
+
+        <!-- tools -->
+        <div class="tools">
+          <div class="dropdown">
+            <div class="select">
+              <span class="selected">Empresa Demo 4</span>
+              <div class="caret"></div>
+            </div>
+            <ul class="menu">
+              <li>Empresa Demo 1</li>
+              <li>Empresa Demo 2</li>
+              <li>Empresa Demo 3</li>
+              <li class="active">Empresa Demo 4</li>
+              <li>Empresa Demo 5</li>
+            </ul>
+          </div>
+          <button class="button" onclick="openModal('demoModal')">
+            <span class="fa-solid fa-cat"></span>
+          </button>
+        </div>
       </div>
+
+      <h3 class="section__header">${title}</div></h3>
+    </header>
+
+    <div class="table__container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Creado por</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+          </tr>
+        </thead>
+        
+        <tbody id="tableBody"></tbody>
+      </table>
     </div>
-
-    <h3 class="section__header">${title}</h3>
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Creado por</th>
-          <th>Fecha</th>
-          <th>Hora</th>
-        </tr>
-      </thead>
-      
-      <tbody id="tableBody"></tbody>
-    </table>
     
     <!-- MODALS -->
     <div class="modal" id="demoModal">
@@ -219,48 +223,52 @@ async function renderBusiness(token) {
 async function renderCitadels(token) {
   let title = 'Ciudadelas';
   let content = `
-    <div class="hw">
-      <div class="date">
-        <span id="UImonth" class="UImonth"></span>
-        <span id="UIdate" class="UIdate"></span>
-      </div>
-
-      <!-- tools -->
-      <div class="tools">
-        <div class="dropdown">
-          <div class="select">
-            <span class="selected">Empresa Demo 4</span>
-            <div class="caret"></div>
-          </div>
-          <ul class="menu">
-            <li>Empresa Demo 1</li>
-            <li>Empresa Demo 2</li>
-            <li>Empresa Demo 3</li>
-            <li class="active">Empresa Demo 4</li>
-            <li>Empresa Demo 5</li>
-          </ul>
+    <header class="page-header">
+      <div class="hw">
+        <div class="date">
+          <span id="UImonth" class="UImonth"></span>
+          <span id="UIdate" class="UIdate"></span>
         </div>
-        <button class="button" onclick="openModal('demoModal')">
-          <span class="fa-solid fa-cat"></span>
-        </button>
+
+        <!-- tools -->
+        <div class="tools">
+          <div class="dropdown">
+            <div class="select">
+              <span class="selected">Empresa Demo 4</span>
+              <div class="caret"></div>
+            </div>
+            <ul class="menu">
+              <li>Empresa Demo 1</li>
+              <li>Empresa Demo 2</li>
+              <li>Empresa Demo 3</li>
+              <li class="active">Empresa Demo 4</li>
+              <li>Empresa Demo 5</li>
+            </ul>
+          </div>
+          <button class="button" onclick="openModal('demoModal')">
+            <span class="fa-solid fa-cat"></span>
+          </button>
+        </div>
       </div>
+
+      <h3 class="section__header">${title}</div></h3>
+    </header>
+
+    <div class="table__container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Creado por</th>
+            <th>Id</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+          </tr>
+        </thead>
+        
+        <tbody id="tableBody"></tbody>
+      </table>
     </div>
-
-    <h3 class="section__header">${title}</h3>
-
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Nombre</th>
-          <th>Creado por</th>
-          <th>Id</th>
-          <th>Fecha</th>
-          <th>Hora</th>
-        </tr>
-      </thead>
-      
-      <tbody id="tableBody"></tbody>
-    </table>
     
     <!-- MODALS -->
     <div class="modal" id="demoModal">
