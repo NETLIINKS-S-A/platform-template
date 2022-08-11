@@ -1,13 +1,4 @@
 const url = 'https://backend.netliinks.com:443/';
-// let theaders = new Headers();
-// theaders.append("Authorization", `Bearer ${acc_token}`);
-// theaders.append("Cookie", "JSESSIONID=B108DD58E91AB58DB0D646212D441248");
-
-// const Session = {
-//   method: 'GET',
-//   redirect: 'follow'
-// }
-
 /* ===================================================
   Get the access token from the login form
   and make the login request to the API
@@ -23,10 +14,12 @@ async function login(acc_token) {
     redirect: 'follow'
   }
 
-  fetch(`${url}rest/entities/User/`, options)
+  fetch(`${url}rest/entities/Business/`, options)
     .then((response) => response.json())
     .then((datas) => {
       renderSidebar();
+      // open as default
+      loadbusiness(acc_token)
     })
 }
 
@@ -72,16 +65,9 @@ function startSessionAutomatically() {
   if (keylogin != null) {
     console.log(keylogin);
     login(keylogin)
-    //   renderSidebar();
   } else {
     console.log('the keylogin is null')
   }
-
-  // if (keylogin == null) {
-  //   console.log('iniciar sesión');
-  // } else if (loginStatus == true) {
-  //   console.log(keylogin)
-  // }
 }
 
 startSessionAutomatically();
