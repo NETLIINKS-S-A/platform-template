@@ -51,6 +51,10 @@
 
       &:hover {
         background-color: $table-row-hover;
+
+        &:first-child {
+          border-radius: 4px;
+        }
       }
     }
 
@@ -68,50 +72,6 @@
     }
   }
 }
-
-// .table {
-//   display: block;
-//   width: 100%;
-//   border-collapse: collapse;
-//   border-radius: 4px;
-//   background-color: $white;
-//   position: relative;
-
-//   thead {
-//     display: flex;
-//     background-color: $primary-color;
-//     border-radius: 10px;
-//     text-align: left;
-//     position: fixed;
-//     width: 100%;
-    
-//     th {
-//       display: inline-block;
-//       border: 1px solid white;
-//       font-size: 10px;
-//       letter-spacing: 1px;
-//       text-transform: uppercase;
-//       color: $white;
-//       font-weight: 400;
-//       padding: 15px 10px;
-//     }
-
-//   }
-  
-//   tbody {
-    
-//     tr {
-//       &:nth-child(even) {
-//         background-color: $table-zebra-color;
-//       }
-//     }
-    
-//     td {
-//       font-size: $base;
-//       color: $dark-text;
-//       padding: 5px 10px;
-//     }
-//   }
 
 //   // STATUS
 //   &__status {

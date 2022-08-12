@@ -9,8 +9,6 @@ const $d = {
   sidebar: document.getElementById('sidebar'), // Sidebar container
 }
 
-const sessionToken = localStorage.getItem('token');
-
 /*
 If login correctly enter this data
 to the document
@@ -216,8 +214,12 @@ async function renderBusiness(token) {
       })
 
       tableBody.innerHTML = businessData.join('');
-    });
-
+    }).catch((error) => {
+      /* Al ser la primera función, verifica si no hay
+        error, de existir un error, cierra la sesión.
+      */
+      localStorage.setItem('loginStatus', false);
+    })
 }
 
 async function renderCitadels(token) {
