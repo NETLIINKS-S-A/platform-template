@@ -1,7 +1,5 @@
 const $d = {
   login: document.getElementById('login'), // Login Window
-  submit: document.getElementById('loginButton'), // Submit login button
-  email: document.getElementById('email'), // Email input
   password: document.getElementById('password'), // Password input
   interactions: document.getElementById('interactions'), // Interactions container
   doc: document.getElementById('pageContent'), // Document container
@@ -14,9 +12,6 @@ If login correctly enter this data
 to the document
 */
 async function renderSidebar() {
-  $d.doc.classList.add('content--isVisible');
-  $d.login.classList.remove('login--isVisible');
-  
   // SIDEBAR CONTENT
   $d.sidebar.innerHTML = `
     <!-- MENUBAR -->
@@ -28,12 +23,12 @@ async function renderSidebar() {
     <ul class="menu">
       <li class="menu__item">
         <i class="fa-solid fa-building"></i>
-        <span class="text" onclick="renderBusiness(sessionToken)">Empresas</span>
+        <span class="text" onclick="renderBusiness(cnd._token)">Empresas</span>
       </li>
 
       <li class="menu__item">
         <i class="fa-solid fa-apartment"></i>
-        <span class="text" onclick="renderCitadels(sessionToken)">Ciudadelas</span>
+        <span class="text" onclick="renderCitadels(cnd._token)">Ciudadelas</span>
       </li>
 
       <li class="menu__item">
@@ -42,20 +37,20 @@ async function renderSidebar() {
           <span class="text">Usuarios</span>
         </div>
         <ul class="accordion__content">
-          <li><a href="#">
+          <li>
             <i class="fa-solid fa-person-military-pointing"></i>
-            <span class="text" onclick="renderGuards(sessionToken)">Guardias</span>
-          </a></li>
+            <span class="text" onclick="renderGuards(cnd._token)">Guardias</span>
+          </li>
 
-          <li><a href="#">
+          <li>
             <i class="fa-solid fa-user"></i>
-            <span class="text" onclick="renderClients(sessionToken)">Clientes</span>
-          </a></li>
+            <span class="text" onclick="renderClients(cnd._token)">Clientes</span>
+          </li>
 
-          <li><a href="#">
+          <li>
             <i class="fa-solid fa-siren"></i>
-            <span class="text" onclick="renderCitadels(sessionToken)">Emergencia</span>
-          </a></li>
+            <span class="text" onclick="renderCitadels(cnd._token)">Emergencia</span>
+          </li>
         </ul>
       </li>
 
@@ -65,25 +60,25 @@ async function renderSidebar() {
           <span class="text">Bitácora</span>
         </div>
         <ul class="accordion__content">
-          <li><a href="#">
+          <li>
             <i class="fa-solid fa-calendar-exclamation"></i>
             <span class="text">Eventos</span>
-          </a></li>
+          </li>
 
-          <li><a href="#">
+          <li>
             <i class="fa-solid fa-browsers"></i>
             <span class="text">Plataformas</span>
-          </a></li>
+          </li>
 
-          <li><a href="#">
+          <li>
             <i class="fa-solid fa-user"></i>
             <span class="text">Visitas</span>
-          </a></li>
+          </li>
 
-          <li><a href="#">
+          <li>
             <i class="fa-solid fa-note"></i>
             <span class="text">Notas</span>
-          </a></li>
+          </li>
         </ul>
       </li>
 
@@ -93,15 +88,15 @@ async function renderSidebar() {
           <span class="text">importar</span>
         </div>
         <ul class="accordion__content">
-          <li><a href="#">
+          <li>
             <i class="fa-solid fa-person-military-pointing"></i>
             <span class="text">Guardias</span>
-          </a></li>
+          </li>
 
-          <li><a href="#">
+          <li>
             <i class="fa-solid fa-user"></i>
             <span class="text">Clientes</span>
-          </a></li>
+          </li>
         </ul>
       </li>
 
@@ -109,13 +104,18 @@ async function renderSidebar() {
         <i class="fa-solid fa-hammer"></i>
         <span class="text">Superusuarios</span>
       </li>
+
+      <li class="menu__item">
+        <i class="fa-solid fa-hammer"></i>
+        <span class="text" onclick="logOut()">Serrar sesión</span>
+      </li>
     </ul>
   `;  
 
   accordion();
 }
 
-async function renderBusiness(token) {
+async function renderBusiness() {
   let title = 'Empresas';
   let content = `
     <header class="page-header">
@@ -184,21 +184,11 @@ async function renderBusiness(token) {
   $d.dataContent.innerHTML = content;
   dateAndTime();
 
-  let theaders = new Headers();
-  theaders.append("Authorization", `Bearer ${token}`);
-  theaders.append("Cookie", "JSESSIONID=B108DD58E91AB58DB0D646212D441248");
-
-  const options = {
-    method: 'GET',
-    headers: theaders,
-    redirect: 'follow'
-  }
-
-  fetch(`${url}rest/entities/Business`, options)
+  await fetch(`${cnd.url}rest/entities/Business`, options)
     .then((response) => response.json())
     .then((datas) => {
       const tableBody = document.getElementById('tableBody');
-
+      console.log(cnd.url)
       let businessData = datas.map((data)=> {
         let date = reDate(data);
         let time = reTime(data);
@@ -222,7 +212,7 @@ async function renderBusiness(token) {
     })
 }
 
-async function renderCitadels(token) {
+async function renderCitadels() {
   let title = 'Ciudadelas';
   let content = `
     <header class="page-header">
@@ -292,17 +282,7 @@ async function renderCitadels(token) {
   $d.dataContent.innerHTML = content;
   dateAndTime();
 
-  let theaders = new Headers();
-  theaders.append("Authorization", `Bearer ${token}`);
-  theaders.append("Cookie", "JSESSIONID=B108DD58E91AB58DB0D646212D441248");
-
-  const options = {
-    method: 'GET',
-    headers: theaders,
-    redirect: 'follow'
-  }
-
-  fetch(`${url}rest/entities/Citadel`, options)
+  await fetch(`${cnd.url}rest/entities/Citadel`, options)
     .then((response) => response.json())
     .then((datas) => {
       const tableBody = document.getElementById('tableBody');
@@ -326,7 +306,7 @@ async function renderCitadels(token) {
     tableTime();
 }
 
-async function renderGuards(token) {
+async function renderGuards() {
   let title = 'Guardias';
   let content = `
     <header class="page-header">
@@ -395,17 +375,7 @@ async function renderGuards(token) {
   $d.dataContent.innerHTML = content;
   dateAndTime();
 
-  let theaders = new Headers();
-  theaders.append("Authorization", `Bearer ${token}`);
-  theaders.append("Cookie", "JSESSIONID=B108DD58E91AB58DB0D646212D441248");
-
-  const options = {
-    method: 'GET',
-    headers: theaders,
-    redirect: 'follow'
-  }
-
-  fetch(`${url}rest/entities/User`, options)
+  await fetch(`${cnd.url}rest/entities/User`, options)
     .then((response) => response.json())
     .then((datas) => {
       const tableBody = document.getElementById('tableBody');
@@ -435,7 +405,7 @@ async function renderGuards(token) {
     tableTime();
 }
 
-async function renderClients(token) {
+async function renderClients() {
   let title = 'Clientes';
   let content = `
     <header class="page-header">
@@ -505,17 +475,7 @@ async function renderClients(token) {
   $d.dataContent.innerHTML = content;
   dateAndTime();
 
-  let theaders = new Headers();
-  theaders.append("Authorization", `Bearer ${token}`);
-  theaders.append("Cookie", "JSESSIONID=B108DD58E91AB58DB0D646212D441248");
-
-  const options = {
-    method: 'GET',
-    headers: theaders,
-    redirect: 'follow'
-  }
-
-  fetch(`${url}rest/entities/User`, options)
+  await fetch(`${cnd.url}rest/entities/User`, options)
     .then((response) => response.json())
     .then((datas) => {
       const tableBody = document.getElementById('tableBody');
