@@ -8,8 +8,8 @@ const $d = {
 }
 
 /*
-If login correctly enter this data
-to the document
+  Si el login se efectúa correctamente
+  cargará el sidebar en el documento.
 */
 async function renderSidebar() {
   // SIDEBAR CONTENT
@@ -111,7 +111,8 @@ async function renderSidebar() {
       </li>
     </ul>
   `;  
-
+  
+  // helper: ejecuta las acciones del acordión del sidebar
   accordion();
 }
 
@@ -180,7 +181,7 @@ async function renderBusiness() {
       </div>
     </div>
     `;
-
+  // Escribe la interfaz en el documento
   $d.dataContent.innerHTML = content;
   dateAndTime();
 
