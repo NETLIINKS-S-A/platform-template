@@ -129,21 +129,25 @@ function dateAndTime() {
   TABLE STATUS
 ----------------------------------------- */
 // Get the status from HTML
-const statusDOM = document.querySelectorAll('#tableStatus');
-// Index all status item to change class
-for (let i = 0; i < statusDOM.length; i++) {
-  // Add the base status to tableStatus
-  statusDOM[i].classList.add('table__status');
-  // Get the text content from status to choose status type
-  const status = statusDOM[i].innerHTML;
-  if (status == 'confirmado' | status == 'Confirmado') {
-    statusDOM[i].classList.add('table__status--c');
-  } else if (status == 'I' | status == 'i') {
-    statusDOM[i].classList.add('table__status--i');
-    statusDOM[i].innerHTML = 'Inactivo'
-  } else if (status == 'A' | status == 'a') {
-    statusDOM[i].classList.add('table__status--a');
-    statusDOM[i].innerHTML = 'Activo'
+function tableStatus() {
+  const statusDOM = document.querySelectorAll('#tableStatus');
+
+  // Index all status item to change class
+  for (let i = 0; i < statusDOM.length; i++) {
+    // Add the base status to tableStatus
+    statusDOM[i].classList.add('table__status');
+    // Get the text content from status to choose status type
+    const status = statusDOM[i].innerHTML;
+    if (status == 'confirmado' | status == 'Confirmado') {
+      statusDOM[i].classList.add('table__status--c');
+    } else if (status == 'I' | status == 'i') {
+      statusDOM[i].classList.add('table__status--i');
+      statusDOM[i].innerHTML = 'Inactivo'
+    } else if (status == 'A' | status == 'a') {
+      statusDOM[i].classList.add('table__status--a');
+      statusDOM[i].innerHTML = 'Activo'
+      
+    }
   }
 }
 

@@ -189,7 +189,6 @@ async function renderBusiness() {
     .then((response) => response.json())
     .then((datas) => {
       const tableBody = document.getElementById('tableBody');
-      console.log(cnd.url)
       let businessData = datas.map((data)=> {
         let date = reDate(data);
         let time = reTime(data);
@@ -346,7 +345,9 @@ async function renderGuards() {
         <thead>
           <tr>
             <th>Nombre</th>
+            <th>Teléfono</th>
             <th>Estado</th>
+            <th>SuperUsuario</th>
             <th>Fecha</th>
             <th>Hora</th>
           </tr>
@@ -393,7 +394,9 @@ async function renderGuards() {
           return `
           <tr class="business">
             <td>${data.firstName} ${data.lastName}</td>
+            <td>${data.phone}</td>
             <td>${status}</td>
+            <td>${data.isSuper}</td>
             <td>${date}</td>
             <td>${time}</td>
           </tr>`;
@@ -447,6 +450,7 @@ async function renderClients() {
             <th>Nombre</th>
             <th>Teléfono</th>
             <th>Estado</th>
+            <th>SuperUsuario</th>
             <th>Fecha</th>
             <th>Hora</th>
           </tr>
@@ -486,14 +490,17 @@ async function renderClients() {
         let time = reTime(data);
 
         let status;
+        let isSuper;
         data.active === true ? status = 'Activo' : status = 'Inactivo';
+        data.isSuper === true ? isSuper = '<i class="fa-solid fa-lock-keyhole-open"></i>' : isSuper = '<i class="fa-solid fa-lock-keyhole"></i>';
 
         if(data.userType === 'CUSTOMER') {
           return `
           <tr class="business">
             <td>${data.firstName} ${data.lastName}</td>
             <td>${data.phone}</td>
-            <td>${status}</td>
+            <td><span id="tableStatus">${status}</span></td>
+            <td><span id="tableStatusIcon">${isSuper}</span></td>
             <td>${date}</td>
             <td>${time}</td>
           </tr>`;
@@ -502,7 +509,7 @@ async function renderClients() {
 
       tableBody.innerHTML = businessData.join('');
     });
-    
+    tableStatus();
     tableTime();
 }
 
@@ -522,3 +529,17 @@ function closeModal(m) {
     modal.style.display = 'none';
   }, 250)
 }
+
+console.group('FetchPlans');
+fetch('https://backend.netliinks.com:443/rest/entities/Customer?fetchPlan=full', options)
+  .then((res) => res.json())
+  .then((data) => {
+    console.table(data)
+  })
+
+  fetch('https://backend.netliinks.com:443/rest/entities/User', options)
+  .then((res) => res.json())
+  .then((data) => {
+    console.table(data)
+  })
+console.groupEnd();

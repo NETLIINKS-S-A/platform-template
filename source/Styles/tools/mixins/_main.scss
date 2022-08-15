@@ -1,0 +1,15 @@
+/*
+  Añade el estilo básico de los
+  estados de la tabla
+*/
+@mixin table-status {
+  display: block;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  
+  font-size: 10px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

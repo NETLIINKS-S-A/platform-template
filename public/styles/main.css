@@ -1,9 +1,12 @@
+@charset "UTF-8";
 /*
-* NETLIINKS S.A.
-* Author: Poll Castillo
-* email: alejandrocordovafree@gmail.com
-*
-*
+  * NETLIINKS S.A.
+  * Author: Poll Castillo
+  * email: alejandrocordovafree@gmail.com
+*/
+/*
+  Añade el estilo básico de los
+  estados de la tabla
 */
 *, *::after, *::before {
   margin: 0;
@@ -581,6 +584,9 @@ p {
 .table tbody tr:hover {
   background-color: rgba(208, 207, 33, 0.4);
 }
+.table tbody tr:hover:first-child {
+  border-radius: 4px;
+}
 .table tbody td {
   padding: 4px 15px;
   font-size: 14px;
@@ -590,4 +596,41 @@ p {
 }
 .table tbody td:last-child {
   padding-right: 30px;
+}
+.table__status {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #f5f5f5;
+}
+.table__status--icon {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.table__status--icon--s {
+  background-color: #EBFBDE;
+  color: #5CBC4F;
+}
+.table__status--icon--i {
+  background-color: #D3EAFF;
+  color: #2877FF;
+}
+.table__status--a {
+  background-color: #D3EAFF;
+  color: #2877FF;
 }
