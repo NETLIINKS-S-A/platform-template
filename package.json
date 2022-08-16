@@ -19,8 +19,6 @@
   },
   "homepage": "https://github.com/NETLIINKS-S-A/platform-template#readme",
   "dependencies": {
-    "add": "^2.0.6",
-    "eslint": "^8.22.0",
     "live-server": "^1.2.2"
   }
 }

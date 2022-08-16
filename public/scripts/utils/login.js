@@ -57,9 +57,11 @@ async function login(user, password) {
   TODO: esto puede ser opcional
 */
 async function startSessionAutomatically(token) {
-  if (token == 'undefined'){
+  // si el token no está definido, elimina la sesión
+  if (token == 'undefined' || token == null) {
     $d.doc.classList.remove('content--isVisible');
     $d.login.classList.add('login--isVisible');
+    localStorage.removeItem('token');
   } else {
     renderUI();
   }
