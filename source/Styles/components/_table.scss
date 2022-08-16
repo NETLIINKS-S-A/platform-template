@@ -76,56 +76,12 @@
 
   &__status {
     @include table-status;
-
     background-color: #f5f5f5;
 
-    &--icon {
-      @include table-status;
-
-      &--s {
-        background-color: map.get($Success, 100);
-        color: map.get($Success, 500);
-      }
-
-      &--i {
-        background-color: map.get($Info, 100);
-        color: map.get($Info, 500);
-      }
-    }
-
     &--a {
-      background-color: map.get($Info, 100);
+      background-color: map.get($Info, 500);
+      color: $white;
       // background: rgb(161, 138, 251);
-      color: map.get($Info, 500);
     }
   }
 }
-
-//   // STATUS
-//   &__status {
-//     display: block;
-//     text-align: center;
-//     width: 100%;
-//     text-transform: uppercase;
-//     letter-spacing: 0.100rem;
-//     font-weight: bolder;
-//     font-size: 10px;
-//     border-radius: 5px;
-//     padding: 5px 5px;
-    
-//     &--c {
-//       background: rgb(4, 206, 4);
-//       color: $white;
-//     }
-
-//     &--i {
-//       background: rgb(199, 199, 199);
-//       color: rgb(143, 143, 143);
-//     }
-
-//     &--a {
-//       background: rgb(161, 138, 251);
-//       color: rgb(255, 255, 255);
-//     }
-//   }
-// }

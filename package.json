@@ -4,7 +4,8 @@
   "description": "- Si obtenemos el `access_token` podemos guardarlo en localstorage - Al entrar a la plataforma podemos acceder al localStorage para obtener el `access_token` e iniciar sesión automáticamente.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "live-server"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,10 @@
   "bugs": {
     "url": "https://github.com/NETLIINKS-S-A/platform-template/issues"
   },
-  "homepage": "https://github.com/NETLIINKS-S-A/platform-template#readme"
+  "homepage": "https://github.com/NETLIINKS-S-A/platform-template#readme",
+  "dependencies": {
+    "add": "^2.0.6",
+    "eslint": "^8.22.0",
+    "live-server": "^1.2.2"
+  }
 }

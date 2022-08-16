@@ -138,15 +138,15 @@ function tableStatus() {
     statusDOM[i].classList.add('table__status');
     // Get the text content from status to choose status type
     const status = statusDOM[i].innerHTML;
+
     if (status == 'confirmado' | status == 'Confirmado') {
       statusDOM[i].classList.add('table__status--c');
     } else if (status == 'I' | status == 'i') {
       statusDOM[i].classList.add('table__status--i');
       statusDOM[i].innerHTML = 'Inactivo'
-    } else if (status == 'A' | status == 'a') {
+    } else if (status == 'A' | status == 'a' || status == 'activo' || status == 'Activo') {
       statusDOM[i].classList.add('table__status--a');
-      statusDOM[i].innerHTML = 'Activo'
-      
+      statusDOM[i].innerHTML = 'Activo'  
     }
   }
 }
