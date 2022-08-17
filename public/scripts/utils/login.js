@@ -41,7 +41,7 @@ async function login(user, password) {
         if (cnd._token == 'undefined'){
           console.log('incorrect credentials');
         } else {
-          renderUI(cnd._token);
+          RenderUI(cnd._token);
           window.location.reload();
         }
       }, 400);
@@ -63,19 +63,21 @@ async function startSessionAutomatically(token) {
     $d.login.classList.add('login--isVisible');
     localStorage.removeItem('token');
   } else {
-    renderUI();
+    RenderUI();
   }
 }
 
 /**
- * **renderUI:** renderiza la interfáz de usuario
+ * **RenderUI:** renderiza la interfáz de usuario
  * @param {string} token obtiene el token para iniciar sesión 
+ * @throws RenderSidebar
+ * @throws RenderBusiness
 */
-function renderUI(tkn) {
+function RenderUI(tkn) {
   $d.doc.classList.add('content--isVisible');
   $d.login.classList.remove('login--isVisible');
-  renderSidebar();
-  renderBusiness(tkn);
+  RenderSidebar();
+  RenderCitadels(tkn);
 }
 // Inicia sesión con los datos de acceso del formulario de login
 $login.button.addEventListener('click', (evnt)=> {
@@ -87,7 +89,7 @@ if (cnd._token !== 'undefined'){
   startSessionAutomatically(cnd._token);
 }
 
-function logOut() {
+function LogOut() {
   cnd._token = localStorage.setItem('token', undefined);
   $d.doc.classList.remove('content--isVisible');
   $d.login.classList.add('login--isVisible');

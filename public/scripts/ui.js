@@ -1,33 +1,32 @@
 /* --------------------------------------
 MODAL WINDOWS
  -------------------------------------- */
-function modalFunctions() {
-  function openModal(m) {
-    const modal = document.getElementById(m);
+const modal = {
+  open: function(type, id) {
+    const modal = document.getElementById(type);
     modal.style.display = 'block';
+    // Define tiempo para mostrar la animación
     setTimeout(()=>{
       modal.classList.toggle('open');
-    }, 100)
-  }
-  
-  function closeModal(m) {
-    const modal = document.getElementById(m);
-    modal.classList.toggle('open');
-    setTimeout(()=>{
-      modal.style.display = 'none';
-    }, 250)
-  }
+    }, 100);
+  },
+
+  close: function(id) {
+    const modal = document.getElementById(id);
+      modal.classList.toggle('open');
+      setTimeout(()=>{
+        modal.style.display = 'none';
+      }, 250)
+    }
 }
 
 /* --------------------------------------
   DATE AND TIME
  -------------------------------------- */
-/*
-  Get the month an date objects
-  from HTML  
+/**
+  * Obtiene la fecha y el mes actual
 */
-
-function dateAndTime() {
+function DateAndTime() {
   const UImonth = document.getElementById('UImonth');
   const UIdate = document.getElementById('UIdate');
   if (UImonth) {
@@ -129,7 +128,7 @@ function dateAndTime() {
   TABLE STATUS
 ----------------------------------------- */
 // Get the status from HTML
-function tableStatus() {
+function TableStatus() {
   const statusDOM = document.querySelectorAll('#tableStatus');
 
   // Index all status item to change class
@@ -226,12 +225,6 @@ function tableTime() {
     console.log(time);
   });
 }
-
-
-
-
-
-
 
 function reDate(obj) {
   let time = obj.lastModifiedDate;

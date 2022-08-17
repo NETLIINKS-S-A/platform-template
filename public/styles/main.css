@@ -614,3 +614,11 @@ p {
   background-color: #2877FF;
   color: #FFF;
 }
+.table .button, .table .button__small, .table .button__primary {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: none;
+  color: #33415E;
+  background: rgba(255, 255, 255, 0);
+}

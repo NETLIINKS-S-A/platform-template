@@ -84,4 +84,11 @@
       // background: rgb(161, 138, 251);
     }
   }
+
+  .button, .button__small, .button__primary {
+    height: fit-content;
+    padding: none;
+    color: $dark-text;
+    background: rgba($white, 0);
+  }
 }
